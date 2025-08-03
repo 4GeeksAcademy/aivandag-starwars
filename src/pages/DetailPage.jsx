@@ -21,8 +21,9 @@ export default function DetailPage({ type }) {
             <div className="row align-items-center">
                 <div className="col-md-6 text-center">
                     <img
-                        src={`https://starwars-visualguide.com/assets/img/${type === 'people' ? 'characters' : type}/${uid}.jpg`}
+                        src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/${type}/${uid}.jpg`}
                         className="img-fluid rounded"
+                        // onError={(e) => { e.target.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg"; }}
                     />
                 </div>
                 <div

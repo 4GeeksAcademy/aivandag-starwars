@@ -12,7 +12,16 @@ export default function Card({ item, type }) {
         (fav) => fav.uid === item.uid && fav.type === type
     );
 
-    const imgUrl = `https://starwars-visualguide.com/assets/img/${type === 'people' ? 'characters' : type}/${item.uid}.jpg`;
+    // const imgUrl = `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/${type === 'people' ? 'characters' : type}/${item.uid}.jpg`;
+
+//     const imgUrl = type === 'people'
+//   ? `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/assets/img/characters/${item.uid}.jpg`
+//   : `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/${type}/${item.uid}.jpg`;
+
+const imgUrl =
+    `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/` +
+    `${type}/${item.uid}.jpg`;
+
 
     const handleFavorite = () => {
         if (isFav) {
@@ -51,6 +60,9 @@ export default function Card({ item, type }) {
             </>
         );
     }
+
+    console.log("Card:", { type, uid: item.uid, item });
+
 
     return (
         <div className='card'>
