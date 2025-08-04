@@ -11,7 +11,7 @@ export const Home = () => {
 	return (
 		<div className="container">
 			<div className="text-center mt-5">
-				<h2>Chacters</h2>
+				<h2 className="text-start text-danger">Characters</h2>
 			</div>
 			<div className="d-flex overflow-auto gap-3 pb-3">
 				{store.people.map((p) => (
@@ -22,18 +22,18 @@ export const Home = () => {
 			</div>
 
 			<div className="text-center mt-5">
-				<h2>Planets</h2>
+				<h2 className="text-start text-danger">Planets</h2>
 			</div>
-			<div className="d-flex overflow-auto gap-3 pb-3">
+			<div className="d-flex overflow-auto gap-3">
 				{store.planets.map((pl) => (
-					<div key={pl.uid} className="col-md-4 mb-3">
+					<div key={pl.uid} className="col-md-4 flex-shrink-0">
 						<Card item={pl} type="planets" />
 					</div>
 				))}
 			</div>
 
 			<div className="text-center mt-5">
-				<h2>Vehicles</h2>
+				<h2 className="text-start text-danger">Vehicles</h2>
 			</div>
 			<div className="d-flex overflow-auto gap-3 pb-3">
 				{store.vehicles.map((v) => (

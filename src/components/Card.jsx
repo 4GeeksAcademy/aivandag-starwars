@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import useGlobalReducer from "../hooks/useGlobalReducer"
 // import { isHtmlElement } from "react-router-dom/dist/dom";
 
+
 export default function Card({ item, type }) {
 
     const { store, dispatch } = useGlobalReducer();
@@ -12,11 +13,6 @@ export default function Card({ item, type }) {
         (fav) => fav.uid === item.uid && fav.type === type
     );
 
-    // const imgUrl = `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/${type === 'people' ? 'characters' : type}/${item.uid}.jpg`;
-
-//     const imgUrl = type === 'people'
-//   ? `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/assets/img/characters/${item.uid}.jpg`
-//   : `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/${type}/${item.uid}.jpg`;
 
 const imgUrl =
     `https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/` +
@@ -65,12 +61,13 @@ const imgUrl =
 
 
     return (
-        <div className='card'>
+        <div className='card '>
             <img
                 src={imgUrl}
                 className='card-img-top'
                 style={{ height : "200px", objectFit: "cover"}}
                 onClick={() => navigate(`/${type}/${item.uid}`)}
+                style={ type === "people" ? { minHeight: "150px"} : {}}
             />
             <div className='card-body'>
                 <h5 className='card-title'>{item.name}</h5>

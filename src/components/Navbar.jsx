@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-
+import logo from "../assets/img/logo_starwars.png"
 
 export default function Navbar() {
 	const { store, dispatch } = useGlobalReducer();
@@ -10,16 +10,16 @@ export default function Navbar() {
 	const favCount = store.favorites.length;
 
 	return (
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<div className="container">
+		<nav className="navbar navbar-expand-lg navbar-light bg-light py-2">
+			<div className="container d-flex justify-content-between align-items-center">
 				<Link to="/" className="navbar-brand d-flex align-items-center">
 					<img
-						src="/4geeks.ico"
-						width="30"
+						src={logo}
+						width="45"
 						height="30"
 						className="d-inline-block align-top me-2"
 					/>
-					StarWars Blog
+					{/* StarWars Blog */}
 				</Link>
 				<button
 					className="navbar-toggler"
@@ -36,7 +36,7 @@ export default function Navbar() {
 				<div className="collapse navbar-collapse" id="navbarContent">
 					{/* Menú principal */}
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className="nav-item">
+						{/* <li className="nav-item">
 							<Link to="/" className="nav-link">People</Link>
 						</li>
 						<li className="nav-item">
@@ -44,7 +44,7 @@ export default function Navbar() {
 						</li>
 						<li className="nav-item">
 							<Link to="/vehicles" className="nav-link">Vehicles</Link>
-						</li>
+						</li> */}
 					</ul>
 
 					<ul className="navbar-nav">
